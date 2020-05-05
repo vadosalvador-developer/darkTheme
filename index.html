@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Theme</title>
+    <link rel="stylesheet" href="css/main.scss">
+</head>
+<body>
+    <div class="container">
+        <h1>Светлая / Тёмная тема</h1>
+            <div class="toggle-container">
+                <input type="checkbox" id="switch" name="theme"><label for="switch"></label>
+            </div>
+        <p>С другой стороны рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития. С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности способствует подготовки и реализации направлений прогрессивного развития. Товарищи! постоянный количественный рост и сфера нашей активности требуют от нас анализа дальнейших направлений развития. С другой стороны реализация намеченных плановых заданий обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития. Задача организации, в особенности же начало повседневной работы по формированию позиции в значительной степени обуславливает создание направлений прогрессивного развития. </p>
+    </div>
+
+    <script>
+        let checkbox = document.querySelector('input[name=theme]');
+
+        checkbox.addEventListener('change', function() {
+            if(this.checked) {
+                trans()
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                trans()
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })
+
+        let trans = () => {
+            document.documentElement.classList.add('transition');
+            window.setTimeout(() => {
+                document.documentElement.classList.remove('transition');
+            }, 1000)
+        }
+    </script>
+</body>
+</html>
